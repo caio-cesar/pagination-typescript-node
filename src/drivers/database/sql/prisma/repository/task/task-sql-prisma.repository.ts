@@ -1,5 +1,5 @@
-import { PageableInput, paginate } from "@/repository/commons/pagination";
-import { Page } from "@/repository/commons/pagination.types";
+import { Page } from "@/commons/pagination/pagination.types";
+import { PageableInput, paginate } from "@/commons/pagination/pagination";
 import { TaskRepository } from "@/repository/task/task-repository";
 import { TaskEntity, TaskSearchQuery } from "@/repository/task/task.types";
 import { Task, TaskStatus } from "@prisma/client";

@@ -1,8 +1,8 @@
 import { TaskEntity, TaskSearchQuery } from "@/repository/task/task.types";
 import { TaskRepository } from "@/repository/task/task-repository";
-import { Page } from "@/repository/commons/pagination.types";
+import { Page } from "@/commons/pagination/pagination.types";
 import { TaskModel } from "../../model/task-model";
-import { PageableInput, paginate } from "@/repository/commons/pagination";
+import { PageableInput, paginate } from "@/commons/pagination/pagination";
 import { buildQuery } from "../../utils/query";
 import { ObjectId } from 'mongodb';
 

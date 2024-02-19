@@ -5,11 +5,13 @@ export const TaskStatus = {
     CANCELLED: 'CANCELLED'
 } as const;
 
+export type TaskStatusKeys = keyof typeof TaskStatus;
+
 export type TaskEntity = {
     id?: string;
     title: string;
     description: string;
-    status: TaskStatus[keyof typeof TaskStatus];
+    status: TaskStatusKeys;
     createdAt?: Date;
     updatedAt?: Date | null;
 }
@@ -17,4 +19,5 @@ export type TaskEntity = {
 export type TaskSearchQuery = {
     title?: string;
     description?: string;
+    status?: TaskStatusKeys;
 }

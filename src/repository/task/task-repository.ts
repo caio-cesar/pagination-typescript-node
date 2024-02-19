@@ -1,6 +1,6 @@
 
-import { PageableInput } from "../commons/pagination";
-import { Page } from "../commons/pagination.types";
+import { PageableInput } from "@/commons/pagination/pagination";
+import { Page } from "@/commons/pagination/pagination.types";
 import { TaskEntity, TaskSearchQuery } from "./task.types";
 
 export interface TaskRepository {
