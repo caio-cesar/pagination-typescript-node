@@ -2,7 +2,7 @@ version: '3.1'
 
 services:
   mongodb:
-    image: mongo
+    image: mongo:7.0.5
     container_name: mongodb-pagination
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
@@ -13,7 +13,7 @@ services:
       - 27017:27017
 
   mongo-express:
-    image: mongo-express
+    image: mongo-express:1.0.2-20
     restart: always
     container_name: mongo-pagination-express
     environment:
@@ -26,14 +26,14 @@ services:
       - mongodb
     
   product-service-pg:
-    image: bitnami/postgresql
+    image: bitnami/postgresql:14.11.0
     container_name: pagination-pg
     ports: 
       - 5432:5432
     environment:
-      - POSTGRESQL_USERNAME=product_username
-      - POSTGRESQL_PASSWORD=product_password
-      - POSTGRESQL_DATABASE=product
+      - POSTGRESQL_USERNAME=task_username
+      - POSTGRESQL_PASSWORD=task_password
+      - POSTGRESQL_DATABASE=task
     volumes:
     - postgres_data_pagination:/bitnami/postgresql
 
