@@ -12,6 +12,10 @@ export type UpdateTaskHttpInputDTO = {
     status: string;
 }
 
+export type DeleteTaskHttpInputDTO = {
+    id: string;
+}
+
 export type TaskHttpDTO = {
     id?: string;
     title: string;

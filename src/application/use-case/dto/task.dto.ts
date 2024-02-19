@@ -14,7 +14,7 @@ export type UpdateTaskInputDTO = {
     id: string;
     title: string;
     description: string;
-    status: string;
+    status: keyof typeof TaskStatusDTO;
 }
 
 export type TaskDTO = {
