@@ -6,8 +6,8 @@ import { PageableInput } from "@/commons/pagination/pagination";
 export async function findAllTasks(req: Request, res: Response) {
     const controller = createFindAllTasksController();    
     const schema = z.object({
-        page: z.coerce.number().default(1),
-        size: z.coerce.number().default(10),
+        page: z.coerce.number().min(1).default(1),
+        size: z.coerce.number().min(1).default(10),
         title: z.string().optional(),
         description: z.string().optional()
     })    
