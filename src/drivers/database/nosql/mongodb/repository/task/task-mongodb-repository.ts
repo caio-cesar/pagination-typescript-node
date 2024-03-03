@@ -23,7 +23,12 @@ export class TaskMongoRepository implements TaskRepository {
     }
 
     async insert(task: TaskEntity): Promise<TaskEntity> {
-        return await TaskModel.create(task)
+        const newTask = await TaskModel.create(task)
+        
+        return {
+            id: newTask._id.toString(),
+            ...task
+        }
     }
 
     async findById(id: string): Promise<TaskEntity | null> {
@@ -41,8 +46,8 @@ export class TaskMongoRepository implements TaskRepository {
         return paginate(allTasks, totalTasks, pageableInput);
     }
 
-    delete(id: string): Promise<void> {
-        throw new Error("Method not implemented.");
+    async delete(id: string): Promise<void> {
+        await TaskModel.findByIdAndDelete(id).exec(); 
     }
 
 }
